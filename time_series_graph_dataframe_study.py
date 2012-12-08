@@ -1,7 +1,4 @@
-import datetime
-import matplotlib.pyplot as plt
 import pandas.io.data as web
-from pandas.io.data import DataReader
 from pandas import DataFrame
 
 # Create pandas Time series data structure
