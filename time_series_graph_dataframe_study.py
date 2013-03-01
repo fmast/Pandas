@@ -24,5 +24,8 @@ S1 = Pivot - (High - Pivot)
 S2 = Pivot - (High - Low)
 S3 = Low - (2 * (High - Pivot))
 
-frame = DataFrame({'Open': Open, 'R1': R1, 'R2': R2, 'R3': R3, 'Pivot': Pivot, 'S1': S1, 'S2': S2, 'S3': S3})
-print(frame)
+dataFrameAll = DataFrame({'Open': Open, 'R1': R1, 'R2': R2, 'R3': R3, 'Pivot': Pivot, 'S1': S1, 'S2': S2, 'S3': S3})
+dataFrameAll.plot(figsize = (20,9), title = ("Pivot Points"))
+
+dataFrameS3 = DataFrame({'R3': R3, 'Pivot': Pivot, 'S3': S3})
+dataFrameS3.plot(figsize = (20,9), title = ("R3 <=Pivot Point=> S3"))
