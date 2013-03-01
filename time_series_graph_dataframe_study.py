@@ -4,7 +4,7 @@ from pandas import DataFrame
 # Create pandas Time series data structure
 all_data = {}
 ticker = "^GSPC"
-all_data= web.get_data_yahoo(ticker, '11/1/2012', '12/7/2012')
+all_data= web.get_data_yahoo(ticker, '01/1/2013', '02/28/2013')
 
 # Global Variables
 Volume = all_data["Volume"]
@@ -24,8 +24,12 @@ S1 = Pivot - (High - Pivot)
 S2 = Pivot - (High - Low)
 S3 = Low - (2 * (High - Pivot))
 
+
 dataFrameAll = DataFrame({'Open': Open, 'R1': R1, 'R2': R2, 'R3': R3, 'Pivot': Pivot, 'S1': S1, 'S2': S2, 'S3': S3})
 dataFrameAll.plot(figsize = (20,9), title = ("Pivot Points"))
 
 dataFrameS3 = DataFrame({'R3': R3, 'Pivot': Pivot, 'S3': S3})
-dataFrameS3.plot(figsize = (20,9), title = ("R3 <=Pivot Point=> S3"))
+dataFrameS3.plot(figsize = (20,9), title = ("R3 <Pivot> S3"))
+
+dataFrameOpen = DataFrame({'R3': R3, 'Open': Open, 'Pivot': Pivot, 'S3': S3})
+dataFrameOpen.plot(figsize = (20,9), title = ("R3 <=> Open <Pivot> S3"))
